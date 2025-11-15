@@ -1,0 +1,192 @@
+/* Estilos base para accesibilidad */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #2b6cb0;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Contraste mejorado */
+body {
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+/* Formularios accesibles */
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.input-group small {
+    display: block;
+    font-size: 0.8rem;
+    color: #4a5568;
+    margin-top: 0.3rem;
+}
+
+/* Contenedor de contraseña */
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    padding-right: 40px;
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #4a5568;
+    padding: 5px;
+}
+
+.toggle-password:hover, .toggle-password:focus {
+    color: #2b6cb0;
+    outline: none;
+}
+
+/* Indicador de fuerza de contraseña */
+.strength-meter {
+    margin-top: 0.5rem;
+    height: 5px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    display: block;
+    height: 100%;
+    width: 0;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.strength-text {
+    display: block;
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+    color: #4a5568;
+}
+
+/* Estados de fuerza */
+[data-strength="0"] .strength-bar { width: 20%; background-color: #e53e3e; }
+[data-strength="1"] .strength-bar { width: 40%; background-color: #dd6b20; }
+[data-strength="2"] .strength-bar { width: 60%; background-color: #d69e2e; }
+[data-strength="3"] .strength-bar { width: 80%; background-color: #38a169; }
+[data-strength="4"] .strength-bar { width: 100%; background-color: #2f855a; }
+
+/* Checkbox accesible */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+/* Focus visible */
+input:focus, button:focus, select:focus, textarea:focus {
+    outline: 3px solid #90cdf4;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+/* Mensajes de error */
+.message-container {
+    margin-bottom: 1.5rem;
+}
+
+.message {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+}
+
+.message.error {
+    background-color: #fff5f5;
+    border-left: 4px solid #e53e3e;
+    color: #e53e3e;
+}
+
+/* Texto centrado */
+.text-center {
+    text-align: center;
+}
+
+/* Contraste para botones */
+.btn-primary {
+    background-color: #2b6cb0;
+    color: white;
+    border: 2px solid #2b6cb0;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #2c5282;
+}
+
+/* Soporte para dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #f7fafc;
+        background-color: #1a202c;
+    }
+    
+    .input-group label {
+        color: #f7fafc;
+    }
+    
+    .input-group small {
+        color: #cbd5e0;
+    }
+    
+    .message.error {
+        background-color: #2d1313;
+        color: #fc8181;
+    }
+    
+    .btn-primary {
+        background-color: #3182ce;
+        border-color: #3182ce;
+    }
+    
+    .btn-primary:hover {
+        background-color: #2b6cb0;
+    }
+}
